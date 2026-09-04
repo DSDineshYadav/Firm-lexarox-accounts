@@ -11,6 +11,7 @@ import {
   BarChart3,
   Settings,
   LifeBuoy,
+  Inbox,
 } from "lucide-react";
 
 import {
@@ -31,6 +32,7 @@ import { cn } from "@/lib/utils";
 const operations = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Manage Clients", url: "/clients", icon: Users },
+  { title: "Inquiry Management", url: "/inquiries", icon: Inbox },
   { title: "Task Management", url: "/tasks", icon: ListChecks },
 ] as const;
 

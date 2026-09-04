@@ -1876,3 +1876,111 @@ export const activityReportEntries = [
   { action: "Task completed", client: "Aurora Dental Practice", staff: "Priya Raman", date: "2 Aug 2026" },
 ];
 
+export type ClientInquiryCategory =
+  | "Documents"
+  | "Service Requests"
+  | "Billing"
+  | "Account Management"
+  | "Technical Issue"
+  | "Other";
+
+export type ClientInquiryPriority = "Urgent" | "High" | "Medium" | "Low";
+export type ClientInquiryStatus = "New" | "In Progress" | "Resolved";
+
+export type ClientInquiry = {
+  id: string;
+  reference: string;
+  subject: string;
+  client: string;
+  clientId: string;
+  category: ClientInquiryCategory;
+  priority: ClientInquiryPriority;
+  status: ClientInquiryStatus;
+  contactName: string;
+  contactEmail: string;
+  received: string;
+  message: string;
+};
+
+export const clientInquiryCategories: ClientInquiryCategory[] = [
+  "Documents",
+  "Service Requests",
+  "Billing",
+  "Account Management",
+  "Technical Issue",
+  "Other",
+];
+
+export const clientInquiries: ClientInquiry[] = [
+  {
+    id: "ciq-1842",
+    reference: "CIQ-1842",
+    subject: "Cannot upload bank statement",
+    client: "ABC Ltd",
+    clientId: "abc-ltd",
+    category: "Documents",
+    priority: "High",
+    status: "In Progress",
+    contactName: "James Porter",
+    contactEmail: "accounts@abc-ltd.co.uk",
+    received: "2 Sep 2026",
+    message: "Uploaded PDF keeps failing validation on page 3. We have tried re-scanning twice.",
+  },
+  {
+    id: "ciq-1841",
+    reference: "CIQ-1841",
+    subject: "Payment failure — account suspended",
+    client: "Northgate Partners LLP",
+    clientId: "northgate-partners",
+    category: "Billing",
+    priority: "Urgent",
+    status: "New",
+    contactName: "Helen Marsh",
+    contactEmail: "finance@northgatepartners.co.uk",
+    received: "3 Sep 2026",
+    message: "Our portal access was suspended after a failed direct debit. Please confirm next steps.",
+  },
+  {
+    id: "ciq-1840",
+    reference: "CIQ-1840",
+    subject: "Annual accounts filing deadline",
+    client: "XYZ Trading Ltd",
+    clientId: "xyz-ltd",
+    category: "Service Requests",
+    priority: "Medium",
+    status: "In Progress",
+    contactName: "Priya Shah",
+    contactEmail: "hello@xyztrading.com",
+    received: "1 Sep 2026",
+    message: "Need confirmation on filing deadline for ABC Trading Ltd group structure.",
+  },
+  {
+    id: "ciq-1839",
+    reference: "CIQ-1839",
+    subject: "Missing onboarding documents",
+    client: "Marisol Catering",
+    clientId: "marisol-catering",
+    category: "Documents",
+    priority: "Medium",
+    status: "New",
+    contactName: "Elena Ruiz",
+    contactEmail: "elena@marisolcatering.es",
+    received: "4 Sep 2026",
+    message: "Not sure which identity documents are still required to complete onboarding.",
+  },
+  {
+    id: "ciq-1838",
+    reference: "CIQ-1838",
+    subject: "VAT return correction request",
+    client: "Brightside Consulting Ltd",
+    clientId: "brightside-consulting",
+    category: "Billing",
+    priority: "Low",
+    status: "Resolved",
+    contactName: "Tom Fletcher",
+    contactEmail: "finance@brightsideconsulting.co.uk",
+    received: "28 Aug 2026",
+    message: "Please amend box 4 on the Q2 VAT return — duplicate expense was included.",
+  },
+];
+

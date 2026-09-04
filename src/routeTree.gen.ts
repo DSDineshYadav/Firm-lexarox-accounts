@@ -16,6 +16,7 @@ import { Route as AmlRouteImport } from './routes/aml'
 import { Route as CommunicationsRouteImport } from './routes/communications'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as HelpRouteImport } from './routes/help'
+import { Route as InquiriesRouteImport } from './routes/inquiries'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
@@ -72,6 +73,11 @@ const DashboardRoute = DashboardRouteImport.update({
 const HelpRoute = HelpRouteImport.update({
   id: '/help',
   path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InquiriesRoute = InquiriesRouteImport.update({
+  id: '/inquiries',
+  path: '/inquiries',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsRoute = InsightsRouteImport.update({
@@ -194,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/communications': typeof CommunicationsRoute
   '/dashboard': typeof DashboardRoute
   '/help': typeof HelpRoute
+  '/inquiries': typeof InquiriesRoute
   '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -225,6 +232,7 @@ export interface FileRoutesByTo {
   '/communications': typeof CommunicationsRoute
   '/dashboard': typeof DashboardRoute
   '/help': typeof HelpRoute
+  '/inquiries': typeof InquiriesRoute
   '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -257,6 +265,7 @@ export interface FileRoutesById {
   '/communications': typeof CommunicationsRoute
   '/dashboard': typeof DashboardRoute
   '/help': typeof HelpRoute
+  '/inquiries': typeof InquiriesRoute
   '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -290,6 +299,7 @@ export interface FileRouteTypes {
     | '/communications'
     | '/dashboard'
     | '/help'
+    | '/inquiries'
     | '/insights'
     | '/login'
     | '/onboarding'
@@ -321,6 +331,7 @@ export interface FileRouteTypes {
     | '/communications'
     | '/dashboard'
     | '/help'
+    | '/inquiries'
     | '/insights'
     | '/login'
     | '/onboarding'
@@ -352,6 +363,7 @@ export interface FileRouteTypes {
     | '/communications'
     | '/dashboard'
     | '/help'
+    | '/inquiries'
     | '/insights'
     | '/login'
     | '/onboarding'
@@ -384,6 +396,7 @@ export interface RootRouteChildren {
   CommunicationsRoute: typeof CommunicationsRoute
   DashboardRoute: typeof DashboardRoute
   HelpRoute: typeof HelpRoute
+  InquiriesRoute: typeof InquiriesRoute
   InsightsRoute: typeof InsightsRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
@@ -455,6 +468,13 @@ declare module '@tanstack/react-router' {
       path: '/help'
       fullPath: '/help'
       preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inquiries': {
+      id: '/inquiries'
+      path: '/inquiries'
+      fullPath: '/inquiries'
+      preLoaderRoute: typeof InquiriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights': {
@@ -644,6 +664,7 @@ const rootRouteChildren: RootRouteChildren = {
   CommunicationsRoute: CommunicationsRoute,
   DashboardRoute: DashboardRoute,
   HelpRoute: HelpRoute,
+  InquiriesRoute: InquiriesRoute,
   InsightsRoute: InsightsRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,

@@ -607,13 +607,13 @@ function FirmLandingPage() {
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(60,173,241,0.2),transparent_42%),radial-gradient(circle_at_88%_12%,rgba(80,181,70,0.14),transparent_38%),radial-gradient(circle_at_72%_88%,rgba(226,0,142,0.1),transparent_36%)]"
         />
-        
+
         {/* Subtle Brand Icon background accent with low opacity */}
         <img
           src={config.firm.brandIcon}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -right-12 top-20 h-72 w-72 select-none object-contain opacity-20 lg:h-80 lg:w-80"
+          className="pointer-events-none absolute -right-12 top-20 h-72 w-72 select-none object-contain opacity-20 lg:h-60 lg:w-60"
         />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-24">

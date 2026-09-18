@@ -590,12 +590,20 @@ function FirmLandingPage() {
             ))}
           </nav>
 
-          <div className="flex shrink-0 items-center">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full border-[#2c2a35]/12 bg-white px-5 font-semibold text-[#2c2a35] hover:bg-[#f4f6f9]"
+            >
+              <a href="#consultation">Free Consultation</a>
+            </Button>
+
             <Button
               asChild
               className="rounded-full bg-[#3cadf1] px-5 font-bold text-white shadow-[0_8px_22px_-6px_rgba(60,173,241,0.6)] hover:bg-[#35a3e3]"
             >
-              <a href="#consultation">Free Consultation</a>
+              <Link to="/login">Sign in</Link>
             </Button>
           </div>
         </div>

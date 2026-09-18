@@ -210,9 +210,9 @@ export const defaultFirmConfig: FirmLandingConfig = {
   features: [
     {
       id: "portal",
-      title: "Real-Time Client Portal",
+      title: "Client Portal",
       description:
-        "Access your financial dashboard 24/7. Track upcoming tax deadlines, company profit & loss, and cash flow in one beautiful portal.",
+        "View and respond to document requests from your accountant, securely upload statements, and keep all your business records up-to-date in one place.",
       color: "#3cadf1",
       highlight: true,
       icon: "crm",
@@ -762,7 +762,7 @@ function FirmLandingPage() {
                   className="grid h-12 w-12 place-items-center rounded-2xl shadow-sm"
                   style={{ backgroundColor: `${color}16`, color }}
                 >
-                  {id === "portal" && <BarChart3 className="h-5 w-5" />}
+                  {id === "portal" && <FileText className="h-5 w-5" />}
                   {id === "receipts" && <Receipt className="h-5 w-5" />}
                   {id === "onboarding" && <UserPlus className="h-5 w-5" />}
                   {id === "vat" && <FileText className="h-5 w-5" />}
@@ -773,12 +773,6 @@ function FirmLandingPage() {
                 </span>
                 <h3 className={cn("mt-5 font-bold", highlight ? "text-xl" : "text-base")}>{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[#2c2a35]/65">{description}</p>
-                {highlight && (
-                  <p className="mt-4 inline-flex items-center gap-1 text-xs font-bold" style={{ color }}>
-                    Included in your client plan
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </p>
-                )}
               </article>
             ))}
           </div>
@@ -952,7 +946,7 @@ function FirmLandingPage() {
                 />
                 <div className="absolute inset-[14%] rounded-full bg-[#fafbfd] shadow-inner" />
                 <div className="relative text-center">
-                  <p className="text-2xl font-bold tabular-nums text-[#2c2a35]">78%</p>
+                  <p className="text-2xl font-bold tabular-nums text-[#2c2a35]">85%</p>
                   <p className="text-[0.65rem] font-semibold uppercase tracking-wide text-[#2c2a35]/50">
                     Auto-Reconciled
                   </p>
@@ -1218,7 +1212,7 @@ function FirmLandingPage() {
                 <ul className="mt-5 space-y-4">
                   {[
                     { label: "Dedicated Chartered Accountant", value: "Direct email & phone" },
-                    { label: "24/7 Digital Client Portal", value: "Live profit & tax forecasts" },
+                    { label: "24/7 Digital Client Portal", value: "Document requests & secure uploads" },
                     { label: "Full HMRC & VAT Filings", value: "100% on-time guarantee" },
                     { label: "Automated Bookkeeping", value: "Instant receipt uploads" },
                   ].map((item) => (
